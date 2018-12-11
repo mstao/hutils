@@ -4,14 +4,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * The collection of time util with JDK8.
+ * Provides common methods to operate time with JDK8.
  *
  * @author mingshan
  */
 public class TimeUtil {
     private static final DateTimeFormatter DEFAULT_DATE_TIME_FORMATTER = TimeFormat.LONG_DATE_PATTERN_LINE_24.formatter;
 
-    private TimeUtil() {}
+    private TimeUtil() { throw new UnsupportedOperationException("It's prohibited to create instances of the class."); }
 
     /**
      * Gets the current datetime by default format.

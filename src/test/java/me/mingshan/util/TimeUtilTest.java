@@ -6,6 +6,6 @@ public class TimeUtilTest {
 
     @Test
     public void test1() {
-        System.out.println(TimeUtil.getCurrentDatetime());
+        System.out.println(TimeUtil.getCurrentDateTime());
     }
 }

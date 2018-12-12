@@ -31,7 +31,7 @@ public class TimeUtil {
      *
      * @return the current datetime
      */
-    public static String getCurrentDatetime() {
+    public static String getCurrentDateTime() {
         return DEFAULT_DATE_TIME_FORMATTER.format(LocalDateTime.now());
     }
 
@@ -41,7 +41,7 @@ public class TimeUtil {
      * @param format the specified format
      * @return the current datetime
      */
-    public static String getCurrentDatetime(TimeFormat format) {
+    public static String getCurrentDateTime(TimeFormat format) {
         return format.formatter.format(LocalDateTime.now());
     }
 

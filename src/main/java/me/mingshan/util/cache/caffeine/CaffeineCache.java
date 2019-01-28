@@ -69,13 +69,7 @@ public class CaffeineCache implements Cache {
     @Override
     public Object putIfPresent(Object key, Object value) {
         Objects.requireNonNull(key);
-        Object existingValue = this.cache.getIfPresent(key);
-        if (existingValue == null) {
-            cache.put(key, value);
-            return null;
-        } else {
-            return existingValue;
-        }
+        return this.cache.asMap().putIfAbsent(key, value);
     }
 
     @Override

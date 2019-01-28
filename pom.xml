@@ -17,6 +17,8 @@
     <aspect.version>1.9.2</aspect.version>
     <asm.version>7.0</asm.version>
     <caffeine.version>2.6.2</caffeine.version>
+    <kryo.version>5.0.0-RC1</kryo.version>
+    <protostuff.version>1.5.9</protostuff.version>
   </properties>
 
   <dependencies>
@@ -57,6 +59,26 @@
       <artifactId>caffeine</artifactId>
       <version>${caffeine.version}</version>
     </dependency>
+
+    <!-- protostuff -->
+    <dependency>
+      <groupId>io.protostuff</groupId>
+      <artifactId>protostuff-core</artifactId>
+      <version>${protostuff.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.protostuff</groupId>
+      <artifactId>protostuff-runtime</artifactId>
+      <version>${protostuff.version}</version>
+    </dependency>
+
+    <!-- kryo -->
+    <dependency>
+      <groupId>com.esotericsoftware</groupId>
+      <artifactId>kryo</artifactId>
+      <version>${kryo.version}</version>
+    </dependency>
+
   </dependencies>
 
   <build>

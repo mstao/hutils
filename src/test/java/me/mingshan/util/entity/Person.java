@@ -6,6 +6,8 @@ package me.mingshan.util.entity;
 public class Person {
     private String name;
     public int age;
+    public String type;
+    public boolean state;
 
     public String getName() {
         return name;
@@ -23,11 +25,29 @@ public class Person {
         this.age = age;
     }
 
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", type='" + type + '\'' +
+                ", state=" + state +
                 '}';
     }
 }

@@ -121,7 +121,7 @@ public class TimeUtil {
         LONG_DATE_PATTERN_DOUBLE_SLASH_24("yyyy\\MM\\dd HH:mm:ss"),
 
         /**
-         * Long time format with millisecond , 12-hour clock
+         * Long time format with millisecond, 12-hour clock
          */
         LONG_DATE_PATTERN_WITH_MILSEC_LINE_12("yyyy-MM-dd hh:mm:ss.SSS"),
         LONG_DATE_PATTERN_WITH_MILSEC_SLASH_12("yyyy/MM/dd hh:mm:ss.SSS"),
@@ -129,7 +129,7 @@ public class TimeUtil {
         LONG_DATE_PATTERN_WITH_MILSEC_NONE_12("yyyyMMdd hh:mm:ss.SSS"),
 
         /**
-         * Long time format with millisecond , 24-hour clock
+         * Long time format with millisecond, 24-hour clock
          */
         LONG_DATE_PATTERN_WITH_MILSEC_LINE_24("yyyy-MM-dd HH:mm:ss.SSS"),
         LONG_DATE_PATTERN_WITH_MILSEC_SLASH_24("yyyy/MM/dd HH:mm:ss.SSS"),

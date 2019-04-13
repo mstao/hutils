@@ -1,6 +1,10 @@
 package me.mingshan.util;
 
+/**
+ * @author mingshan
+ */
 public class Demo {
+    private static final int FLAG = 1;
     private int tryBlock;
     private int catchBlock;
     private int finallyBlock;

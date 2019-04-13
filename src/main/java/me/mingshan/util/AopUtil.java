@@ -97,7 +97,7 @@ public class AopUtil {
         Method method = null;
         try {
             method = type.getDeclaredMethod(methodName, parameterTypes);
-            if(method.isBridge()){
+            if (method.isBridge()) {
                 // Uses Asm to unbride bride method.
                 method = MethodProvider.getInstance().unbride(method, type);
             }

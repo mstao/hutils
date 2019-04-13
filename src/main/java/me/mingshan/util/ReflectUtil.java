@@ -13,11 +13,9 @@
  */
 package me.mingshan.util;
 
+import java.io.IOException;
 import java.lang.reflect.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * The collection of reflect util.
@@ -478,9 +476,31 @@ public class ReflectUtil {
     // Method
     ///////////////////////////////////////////////////////////////////////////
 
-    ///////////////////////////////////////////////////////////////////////////
-    // Modifier
-    ///////////////////////////////////////////////////////////////////////////
+    /**
+     * Gets declared method from specified type by mame and parameters types.
+     *
+     * @param type           the type
+     * @param methodName     the name of the method
+     * @param parameterTypes the parameter array
+     * @return a {@link Method} object or null if method doesn't exist
+     */
+    public static Method getDeclaredMethod(Class<?> type, String methodName, Class<?>... parameterTypes)
+            throws IOException, ClassNotFoundException {
+        Method method = null;
+        try {
+            method = type.getDeclaredMethod(methodName, parameterTypes);
+            if (method.isBridge()) {
+                // Uses Asm to unbride bride method.
+                method = MethodProvider.getInstance().unbride(method, type);
+            }
+        } catch (NoSuchMethodException e) {
+            Class<?> superclass = type.getSuperclass();
+            if (superclass != null) {
+                method = getDeclaredMethod(superclass, methodName, parameterTypes);
+            }
+        }
+        return method;
+    }
 
     /**
      * Gets access level by modifier.

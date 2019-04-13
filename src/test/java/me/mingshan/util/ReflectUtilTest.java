@@ -19,6 +19,8 @@ public class ReflectUtilTest {
             field1.setAccessible(true);
             Assert.assertEquals("address", field1.getName());
 
+            final Class<?>[] allSuperClass = ReflectUtil.getAllSuperClass(Student.class);
+
             Field[] allFields = ReflectUtil.getAllFields(Student.class);
             for (Field field : allFields) {
                 field.setAccessible(true);

@@ -39,7 +39,7 @@ public class CaffeineConfig {
     // The unit of refresh time.
     private static final TimeUnit REFRESH_TIME_UNIT = TimeUnit.MINUTES;
 
-    private static Cache<Object, Object> cache;
+    private volatile static Cache<Object, Object> cache;
 
     public static Cache<Object, Object> getCache() {
         if (cache == null) {

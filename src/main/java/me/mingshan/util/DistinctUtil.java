@@ -43,6 +43,7 @@ public class DistinctUtil {
      */
     public static <T> List<T> streamDistinct(List<T> source, Function<? super T, ?> keyExtractor) {
         Objects.requireNonNull(source);
+        Objects.requireNonNull(keyExtractor);
 
         return source.parallelStream().filter(distinctByKey(keyExtractor))
                 .collect(Collectors.toList());

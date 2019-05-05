@@ -19,6 +19,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.List;
 
 /**
  * Serializer implementation via JDK.
@@ -28,7 +29,7 @@ import java.io.ObjectOutputStream;
 public class JDKSerializer implements Serializer {
 
     @Override
-    public <T> byte[] writeObject(T obj) {
+    public <T> byte[] serializeObject(T obj) {
         byte[] bytes = null;
         try {
             ByteArrayOutputStream bo = new ByteArrayOutputStream();
@@ -46,7 +47,7 @@ public class JDKSerializer implements Serializer {
 
     @SuppressWarnings("unchecked")
     @Override
-    public <T> T readObject(byte[] bytes, Class<T> clazz) {
+    public <T> T deserializeObject(byte[] bytes, Class<T> clazz) {
         Object obj = null;
         try {
             ByteArrayInputStream bi = new ByteArrayInputStream(bytes);
@@ -56,9 +57,18 @@ public class JDKSerializer implements Serializer {
             bi.close();
             oi.close();
         } catch (Exception e) {
-            System.out.println("translation" + e.getMessage());
             e.printStackTrace();
         }
         return (T) obj;
+    }
+
+    @Override
+    public <T> byte[] serializeList(List<T> objList) {
+        return new byte[0];
+    }
+
+    @Override
+    public <T> List<T> deserializeList(byte[] paramArrayOfByte, Class<T> targetClass) {
+        return null;
     }
 }

@@ -27,8 +27,12 @@ public class ClassUtil {
     }
 
     /**
-     * Gets class loader.
-     *
+     * Gets class loader.<br/>
+     * <pre>
+     *  1. Thread.currentThread().getContextClassLoader()
+     *  2. clazz.getClassLoader()
+     *  3. ClassLoader.getSystemClassLoader()
+     * </pre>
      * @param clazz the current class.
      * @return the class loader
      */
@@ -53,5 +57,22 @@ public class ClassUtil {
      */
     public static ClassLoader getClassLoader() {
         return getClassLoader(ClassUtil.class);
+    }
+
+    /**
+     * Check the specified class exists the current classpath.
+     *
+     * @param className the specified classname
+     * @param classLoader the classloader
+     * @return return {@code true}, exists; return {@code false}, not exists.
+     */
+    public static boolean isPresent(String className, ClassLoader classLoader) {
+        try {
+            classLoader.loadClass(className);
+            return true;
+        } catch (Throwable ex) {
+            // Class or one of its dependencies is not present...
+            return false;
+        }
     }
 }

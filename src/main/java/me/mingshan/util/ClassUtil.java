@@ -60,7 +60,7 @@ public class ClassUtil {
     }
 
     /**
-     * Check the specified class exists the current classpath.
+     * Checks the specified class exists the current classpath.
      *
      * @param className the specified classname
      * @param classLoader the classloader

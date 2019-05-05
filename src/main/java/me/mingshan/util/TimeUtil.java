@@ -13,8 +13,12 @@
  */
 package me.mingshan.util;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 /**
  * Provides common methods to operate time with JDK8.
@@ -89,6 +93,30 @@ public class TimeUtil {
      */
     public static LocalDateTime parse(String text, TimeFormat format) {
         return LocalDateTime.parse(text, format.formatter);
+    }
+
+    /**
+     * Date -> LocalDateTime
+     *
+     * @param date the specified date, not null
+     * @return the parsed local date-time, not null
+     */
+    public static LocalDateTime date2LocalDateTime(Date date) {
+        Instant instant = date.toInstant();
+        ZoneId zoneId = ZoneId.systemDefault();
+        return instant.atZone(zoneId).toLocalDateTime();
+    }
+
+    /**
+     * LocalDateTime -> Date
+     *
+     * @param localDateTime the specified local date-time, not null
+     * @return the parsed date, not null
+     */
+    public static Date localDateTime2Date(LocalDateTime localDateTime) {
+        ZoneId zoneId = ZoneId.systemDefault();
+        ZonedDateTime zdt = localDateTime.atZone(zoneId);
+        return Date.from(zdt.toInstant());
     }
 
     /**

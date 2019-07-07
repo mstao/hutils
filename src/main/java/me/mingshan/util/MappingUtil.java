@@ -1,7 +1,6 @@
 package me.mingshan.util;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +11,10 @@ import java.util.Map;
  * @author mingshan
  */
 public class MappingUtil {
+
+    private MappingUtil() {
+        throw new UnsupportedOperationException("It's prohibited to create instances of the class.");
+    }
 
     public static <T> boolean oneToOne(List<T> source, String fieldName1, String fieldName2) {
         Map<String, String> map1 = new HashMap<>();

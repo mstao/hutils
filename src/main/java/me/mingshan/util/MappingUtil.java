@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * One to one mapping.
@@ -17,6 +18,13 @@ public class MappingUtil {
     }
 
     public static <T> boolean oneToOne(List<T> source, String fieldName1, String fieldName2) {
+        Objects.requireNonNull(source);
+        Objects.requireNonNull(fieldName1);
+        Objects.requireNonNull(fieldName2);
+
+        if (source.size() == 1)
+            return true;
+
         Map<String, String> map1 = new HashMap<>();
         Map<String, String> map2 = new HashMap<>();
         for (T item : source) {
@@ -26,6 +34,7 @@ public class MappingUtil {
 
             if (checkMatching(map2, property2, property1)) return false;
         }
+
         return true;
     }
 

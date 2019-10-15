@@ -118,7 +118,64 @@ public class TimeUtil {
         ZonedDateTime zdt = localDateTime.atZone(zoneId);
         return Date.from(zdt.toInstant());
     }
+    
+      /**
+       * Date -> LocalDate
+       *
+       * @param date the date
+       * @return the LocalDateTime
+       */
+      public static LocalDate date2LocalDate(Date date) {
+        LocalDateTime localDateTime = date2LocalDateTime(date);
+        return localDateTime.toLocalDate();
+      }
 
+      /**
+       * 日期相隔天数
+       *
+       * @param startDateInclusive 开始时间
+       * @param endDateExclusive 结束时间
+       * @return 天数
+       */
+      public static int periodDays(LocalDate startDateInclusive, LocalDate endDateExclusive) {
+        return Period.between(startDateInclusive, endDateExclusive).getDays();
+      }
+
+      /**
+       * 日期相隔天数
+       *
+       * @param startDateInclusive 开始时间
+       * @param endDateExclusive 结束时间
+       * @return 天数
+       */
+      public static int periodDays(Date startDateInclusive, Date endDateExclusive) {
+        LocalDate startLocalDate = date2LocalDate(startDateInclusive);
+        LocalDate endLocalDate = date2LocalDate(endDateExclusive);
+        return Period.between(startLocalDate, endLocalDate).getDays();
+      }
+
+      /**
+       * 传入时间是否在当天之前
+       *
+       * @param date 传入时间
+       * @return true，传入时间在当天之前；false，传入时间在当天之后或是当天
+       */
+      public static boolean isBeforeToday(Date date) {
+        LocalDate now = LocalDate.now();
+        return date2LocalDate(date).isBefore(now);
+      }
+
+      /**
+       * 传入时间是否在当天之后
+       *
+       * @param date 传入时间
+       * @return true，传入时间在当天之后；false，传入时间在当天之前或当天
+       */
+      public static boolean isAfterToday(Date date) {
+        LocalDate now = LocalDate.now();
+        return date2LocalDate(date).isAfter(now);
+      }
+    
     /**
      * The format of time
      */

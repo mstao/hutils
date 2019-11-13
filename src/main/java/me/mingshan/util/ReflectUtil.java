@@ -41,7 +41,7 @@ public class ReflectUtil {
 
     /**
      * Returns the {@code Class} object associated with the class or
-     * interface with the given string name.<br/>
+     * interface with the given string name. 
      * See {@link Class#forName(String)}
      *
      * @param className the specified class name
@@ -55,7 +55,7 @@ public class ReflectUtil {
     /**
      * Returns the {@code Class} representing the direct superclass of the
      * entity (class, interface, primitive type or void) represented by
-     * this {@code Class}.<br/>
+     * this {@code Class}. 
      * See {@link Class#getSuperclass()}
      *
      * @param clazz the specified class
@@ -68,7 +68,7 @@ public class ReflectUtil {
 
     /**
      * Returns the {@code Class} representing the direct superclass of the
-     * entity (class, interface, primitive type or void) represented by the given {@code Object}.<br/>
+     * entity (class, interface, primitive type or void) represented by the given {@code Object}. 
      * See {@link Class#getSuperclass()}
      *
      * @param source the source object
@@ -177,7 +177,7 @@ public class ReflectUtil {
     /**
      * Returns a {@code Constructor} object that reflects the specified
      * public constructor of the class represented by this {@code Class}
-     * object.<br/>
+     * object. 
      * See {@link Class#getConstructor(Class[])}
      *
      * @param clazz the specified class
@@ -194,7 +194,7 @@ public class ReflectUtil {
     /**
      * Returns an array containing {@code Constructor} objects reflecting
      * all the public constructors of the class represented by this
-     * {@code Class} object. Just public constructors.<br/>
+     * {@code Class} object. Just public constructors. 
      * See {@link Class#getConstructors()}
      *
      * @param clazz the specified class
@@ -208,7 +208,7 @@ public class ReflectUtil {
     /**
      * Returns a {@code Constructor} object that reflects the specified
      * constructor of the class represented by this {@code Class}
-     * object.<br/>
+     * object. 
      * See {@link Class#getDeclaredConstructor(Class[])}
      *
      * @param clazz the specified class
@@ -226,7 +226,7 @@ public class ReflectUtil {
     /**
      * Returns an array containing {@code Constructor} objects reflecting
      * all constructors of the class represented by this
-     * {@code Class} object.<br/>
+     * {@code Class} object. 
      * See {@link Class#getDeclaredConstructors()}
      *
      * @param clazz the specified class

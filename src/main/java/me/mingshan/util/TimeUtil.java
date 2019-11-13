@@ -107,7 +107,7 @@ public class TimeUtil {
     }
 
     /**
-     * LocalDateTime -> Date
+     * LocalDateTime to Date
      *
      * @param localDateTime the specified local date-time, not null
      * @return the parsed date, not null
@@ -119,7 +119,7 @@ public class TimeUtil {
     }
 
     /**
-     * Date -> LocalDate
+     * Date to LocalDate
      *
      * @param date the date
      * @return the LocalDateTime

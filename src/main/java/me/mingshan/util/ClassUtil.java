@@ -27,7 +27,7 @@ public class ClassUtil {
     }
 
     /**
-     * Gets class loader.<br/>
+     * Gets class loader.
      * <pre>
      *  1. Thread.currentThread().getContextClassLoader()
      *  2. clazz.getClassLoader()

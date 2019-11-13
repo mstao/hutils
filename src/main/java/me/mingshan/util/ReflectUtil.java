@@ -483,9 +483,11 @@ public class ReflectUtil {
      * @param methodName     the name of the method
      * @param parameterTypes the parameter array
      * @return a {@link Method} object or null if method doesn't exist
+     * @throws IOException
+     * @throws ClassNotFoundException
      */
     public static Method getDeclaredMethod(Class<?> type, String methodName, Class<?>... parameterTypes)
-            throws IOException, ClassNotFoundException {
+        throws IOException, ClassNotFoundException {
         Method method = null;
         try {
             method = type.getDeclaredMethod(methodName, parameterTypes);

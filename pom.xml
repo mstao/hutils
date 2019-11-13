@@ -5,7 +5,7 @@
 
   <groupId>me.mingshan.util</groupId>
   <artifactId>hutils</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 
   <name>hutils</name>
 
@@ -28,7 +28,7 @@
     <connection>scm:git:https://github.com/mstao/hutils.git</connection>
     <developerConnection>scm:git:https://github.com/mstao/hutils.git</developerConnection>
     <url>https://github.com/mstao/hutils</url>
-    <tag>v1.0</tag>
+    <tag>${project.version}</tag>
   </scm>
 
   <inceptionYear>2019</inceptionYear>

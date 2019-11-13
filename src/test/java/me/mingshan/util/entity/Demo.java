@@ -1,4 +1,4 @@
-package me.mingshan.util;
+package me.mingshan.util.entity;
 
 /**
  * @author mingshan

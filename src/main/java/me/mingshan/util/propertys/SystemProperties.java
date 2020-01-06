@@ -1,4 +1,4 @@
-package me.mingshan.util.property;
+package me.mingshan.util.propertys;
 
 /**
  * Provides the way to get configuration via system property.

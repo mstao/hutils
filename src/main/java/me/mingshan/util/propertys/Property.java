@@ -1,4 +1,4 @@
-package me.mingshan.util.property;
+package me.mingshan.util.propertys;
 
 /**
  * Interface that providers the common methods to get configuration.

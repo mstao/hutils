@@ -1,4 +1,4 @@
-package me.mingshan.util.property;
+package me.mingshan.util.propertys;
 
 import me.mingshan.util.PropertyUtil;
 import me.mingshan.util.StringUtil;

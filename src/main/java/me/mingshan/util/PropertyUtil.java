@@ -39,27 +39,11 @@ public class PropertyUtil {
      */
     public static Properties loadProperties(String fileName) {
         Properties properties = new Properties();
-        InputStream input = ClassUtil.getClassLoader().getResourceAsStream(fileName);
-        if (input == null) {
-            return properties;
-        }
-        BufferedReader br = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8));
 
-        try {
+        try (InputStream input = ClassUtil.getClassLoader().getResourceAsStream(fileName)) {
             properties.load(input);
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                br.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                input.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
 
         return properties;

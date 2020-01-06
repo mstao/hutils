@@ -34,7 +34,7 @@ public class PropertyUtil {
     /**
      * Loads property file information.
      *
-     * @param fileName the filname
+     * @param fileName the file name
      * @return {@link Properties}
      */
     public static Properties loadProperties(String fileName) {

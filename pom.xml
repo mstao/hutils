@@ -42,7 +42,7 @@
     <caffeine.version>2.6.2</caffeine.version>
     <kryo.version>5.0.0-RC1</kryo.version>
     <protostuff.version>1.5.9</protostuff.version>
-    <guava.version>28.0-jre</guava.version>
+    <guava.version>29.0-jre</guava.version>
   </properties>
 
   <dependencies>

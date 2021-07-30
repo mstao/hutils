@@ -43,6 +43,8 @@
     <kryo.version>5.0.0-RC1</kryo.version>
     <protostuff.version>1.5.9</protostuff.version>
     <guava.version>30.0-jre</guava.version>
+    <spring.version>5.3.9</spring.version>
+    <spring-data-redis.version>2.5.3</spring-data-redis.version>
   </properties>
 
   <dependencies>
@@ -120,6 +122,24 @@
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
       <version>2.7</version>
+    </dependency>
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>RELEASE</version>
+        <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-redis</artifactId>
+      <version>${spring-data-redis.version}</version>
     </dependency>
 
   </dependencies>

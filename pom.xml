@@ -45,6 +45,7 @@
     <guava.version>30.0-jre</guava.version>
     <spring.version>5.3.9</spring.version>
     <spring-data-redis.version>2.5.3</spring-data-redis.version>
+    <mybatis.version>3.5.7</mybatis.version>
   </properties>
 
   <dependencies>
@@ -105,7 +106,6 @@
       <version>${kryo.version}</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -140,6 +140,12 @@
       <groupId>org.springframework.data</groupId>
       <artifactId>spring-data-redis</artifactId>
       <version>${spring-data-redis.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>${mybatis.version}</version>
     </dependency>
 
   </dependencies>

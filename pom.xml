@@ -46,6 +46,7 @@
     <spring.version>5.3.9</spring.version>
     <spring-data-redis.version>2.5.3</spring-data-redis.version>
     <mybatis.version>3.5.7</mybatis.version>
+    <swagger-annotations.version>1.5.21</swagger-annotations.version>
   </properties>
 
   <dependencies>
@@ -146,6 +147,11 @@
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
       <version>${mybatis.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-annotations</artifactId>
+        <version>${swagger-annotations.version}</version>
     </dependency>
 
   </dependencies>

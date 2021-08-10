@@ -38,7 +38,7 @@ public class CacheEvictListAspect {
     @Resource
     private StringRedisTemplate stringRedisTemplate;
 
-    @AfterReturning("@annotation(com.service.common.wms.anno.CacheEvictList)")
+    @AfterReturning("@annotation(me.mingshan.util.cache.extend.annotation.CacheEvictList)")
     public void remove(JoinPoint point) throws NoSuchMethodException {
         Signature signature = point.getSignature();
         // 这个方法是代理对象上的

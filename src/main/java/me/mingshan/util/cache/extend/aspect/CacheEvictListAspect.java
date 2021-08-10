@@ -30,12 +30,15 @@ import java.util.List;
 @Aspect
 @Slf4j
 public class CacheEvictListAspect {
+    /** Spring cache key分隔符 */
     private static final String SEPARATOR = "::";
+    /** SpEL 表达式标志 */
+    private static final String SPEL_FLAG = "#";
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;
 
-    @AfterReturning("@annotation(me.mingshan.util.cache.extend.annotation.CacheEvictList)")
+    @AfterReturning("@annotation(com.service.common.wms.anno.CacheEvictList)")
     public void remove(JoinPoint point) throws NoSuchMethodException {
         Signature signature = point.getSignature();
         // 这个方法是代理对象上的
@@ -64,8 +67,8 @@ public class CacheEvictListAspect {
 
         List<String> allKey = new ArrayList<>();
 
-        List parsedList;
-        if (key.contains("#")) {
+        List<?> parsedList;
+        if (key.contains(SPEL_FLAG)) {
             parsedList = parseKey(key, method, point.getArgs());
             if (CollectionUtils.isEmpty(parsedList)) {
                 return;
@@ -82,9 +85,9 @@ public class CacheEvictListAspect {
     }
 
     /**
-     * parseKey from SPEL
+     * Parse key from SpEL
      */
-    private static List parseKey(String key, Method method, Object[] args) {
+    private static List<?> parseKey(String key, Method method, Object[] args) {
         LocalVariableTableParameterNameDiscoverer u =
                 new LocalVariableTableParameterNameDiscoverer();
         String[] paraNameArr = u.getParameterNames(method);

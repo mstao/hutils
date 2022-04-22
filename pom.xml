@@ -43,7 +43,7 @@
     <kryo.version>5.0.0-RC1</kryo.version>
     <protostuff.version>1.5.9</protostuff.version>
     <guava.version>30.0-jre</guava.version>
-    <spring.version>5.3.14</spring.version>
+    <spring.version>5.3.19</spring.version>
     <spring-data-redis.version>2.5.3</spring-data-redis.version>
     <mybatis.version>3.5.7</mybatis.version>
     <swagger-annotations.version>1.5.21</swagger-annotations.version>

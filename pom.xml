@@ -42,7 +42,7 @@
     <caffeine.version>2.6.2</caffeine.version>
     <kryo.version>5.0.0-RC1</kryo.version>
     <protostuff.version>1.5.9</protostuff.version>
-    <guava.version>30.0-jre</guava.version>
+    <guava.version>32.0.0-jre</guava.version>
     <spring.version>5.3.14</spring.version>
     <spring-data-redis.version>2.5.3</spring-data-redis.version>
     <mybatis.version>3.5.7</mybatis.version>
